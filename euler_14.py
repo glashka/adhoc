@@ -9,11 +9,9 @@ def next_step(n):
     return n
 
 for i in xrange(1, 1000000):
-    if i % 1000 == 0:
-        print i, len(paths)
     path = list()
     path.append(i)
-    while i not in paths.keys():
+    while not paths.has_key(i):
         i = next_step(i)
         path.append(i)
     for j in xrange(len(path)):
